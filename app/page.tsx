@@ -142,7 +142,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen bg-background text-foreground">
       <FallingStars />
       <HeroSection />
       <FloatingNavDemo />
@@ -183,7 +183,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="bg-zinc-800/50 border-zinc-700/50">
+              <Card key={index} className="bg-card border-border text-card-foreground">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-lg bg-zinc-700/50">
@@ -229,8 +229,8 @@ export default function Home() {
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-zinc-100">What Our Users Say</h2>
-            <p className="mt-4 text-zinc-400">Trusted by leading creators and brands worldwide</p>
+            <h2 className="text-3xl font-bold text-foreground">Why Choose TalentLink?</h2>
+            <p className="mt-4 text-muted-foreground">Everything you need...</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -291,7 +291,8 @@ export default function Home() {
             to grow their business and create impactful collaborations.
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Button size="lg" className="bg-white text-zinc-900 hover:bg-zinc-200">
+           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-muted">
+
               Create Free Account
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

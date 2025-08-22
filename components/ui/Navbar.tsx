@@ -4,8 +4,11 @@ import { FloatingNav } from "@/components/ui/auth/floating-navbar";
 import { IconHome, IconDeviceImac, IconChecklist } from "@tabler/icons-react";
 import LogoComponent from "./LogoComponent";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+
 export function FloatingNavDemo() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const{theme,setTheme} = useTheme();
   const navItems = [
     {
       name: "Home",
@@ -37,11 +40,11 @@ export function FloatingNavDemo() {
   return (
     <div className="flex w-full justify-end">
       <Link href="/" passHref>
-        <LogoComponent isDarkMode={isDarkMode} />
+        <LogoComponent isDarkMode={theme==="dark"} />
       </Link>
       <FloatingNav
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
+        isDarkMode={theme==="dark"}
+        setIsDarkMode={()=>setTheme(theme==="dark"?"light":"dark")}
         navItems={navItems}
       />
     </div>
